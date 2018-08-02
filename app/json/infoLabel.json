@@ -1,0 +1,216 @@
+{
+  "9": [
+    {
+      "columnName": "用户名",
+      "columnEnName": "username"
+    },
+    {
+      "columnName": "用户昵称",
+      "columnEnName": "userName"
+    },
+    {
+      "columnName": "启用状态",
+      "columnEnName": "enabled"
+    },
+    {
+      "columnName": "用户权限",
+      "columnEnName": "accountType"
+    },
+    {
+      "columnName": "创建时间",
+      "columnEnName": "createTimestamp"
+    },
+    {
+      "columnName": "修改时间",
+      "columnEnName": "modifiedTimestamp"
+    },
+    {
+      "columnName": "角色",
+      "columnEnName": "roles"
+    },
+    {
+      "columnName": "使用品牌",
+      "columnEnName": "brands"
+    }
+  ],
+  "10": [
+    {
+      "columnName": "角色中文名",
+      "columnEnName": "roleName"
+    },
+    {
+      "columnName": "角色英文名",
+      "columnEnName": "roleEnName"
+    },
+    {
+      "columnName": "创建时间",
+      "columnEnName": "createTimestamp"
+    },
+    {
+      "columnName": "修改时间",
+      "columnEnName": "modifiedTimestamp"
+    }
+  ],
+  "11": [
+    {
+      "columnName": "菜单名称",
+      "columnEnName": "menuName"
+    },
+    {
+      "columnName": "排序权重",
+      "columnEnName": "sort"
+    },
+    {
+      "columnName": "菜单层级",
+      "columnEnName": "level"
+    },
+    {
+      "columnName": "所属菜单",
+      "columnEnName": "pid"
+    },
+    {
+      "columnName": "路径匹配规则",
+      "columnEnName": "uri"
+    },
+    {
+      "columnName": "菜单路径",
+      "columnEnName": "path"
+    },
+    {
+      "columnName": "Icon 名称",
+      "columnEnName": "iconClass"
+    },
+    {
+      "columnName": "启用状态",
+      "columnEnName": "enabled"
+    },
+    {
+      "columnName": "创建时间",
+      "columnEnName": "createTimestamp"
+    },
+    {
+      "columnName": "修改时间",
+      "columnEnName": "modifiedTimestamp"
+    }
+  ],
+  "12": [
+    {
+      "columnName": "角色中文名称",
+      "columnEnName": "columnName"
+    },
+    {
+      "columnName": "角色英文名称",
+      "columnEnName": "columnEnName"
+    },
+    {
+      "columnName": "排序权重",
+      "columnEnName": "sort"
+    },
+    {
+      "columnName": "所属菜单",
+      "columnEnName": "menuId"
+    },
+    {
+      "columnName": "创建时间",
+      "columnEnName": "createTimestamp"
+    },
+    {
+      "columnName": "修改时间",
+      "columnEnName": "modifiedTimestamp"
+    }
+  ],
+  "13": [
+    {
+      "columnName": "品牌中文名称",
+      "columnEnName": "brandName"
+    },
+    {
+      "columnName": "创建时间",
+      "columnEnName": "createTimestamp"
+    },
+    {
+      "columnName": "修改时间",
+      "columnEnName": "modifiedTimestamp"
+    }
+  ],
+  "14": [
+    {
+      "columnName": "渠道名称",
+      "columnEnName": "channelName"
+    },
+    {
+      "columnName": "创建时间",
+      "columnEnName": "createTimestamp"
+    },
+    {
+      "columnName": "修改时间",
+      "columnEnName": "modifiedTimestamp"
+    },
+    {
+      "columnName": "渠道下的用户列表",
+      "columnEnName": "users"
+    },
+    {
+      "columnName": "渠道下的品牌列表",
+      "columnEnName": "brands"
+    }
+  ],
+  "15": [
+    {
+      "columnName": "扣量规则名称",
+      "columnEnName": "name"
+    },
+    {
+      "columnName": "所属渠道",
+      "columnEnName": "channelId"
+    },
+    {
+      "columnName": "开始时间戳",
+      "columnEnName": "beginTimestamp"
+    },
+    {
+      "columnName": "结束时间戳",
+      "columnEnName": "endTimestamp"
+    },
+    {
+      "columnName": "需要操作的字段",
+      "columnEnName": "fieldToBeOperate"
+    },
+    {
+      "columnName": "保底",
+      "columnEnName": "guarantee"
+    },
+    {
+      "columnName": "初始",
+      "columnEnName": "init"
+    },
+    {
+      "columnName": "每天扣量步增",
+      "columnEnName": "step"
+    },
+    {
+      "columnName": "上限",
+      "columnEnName": "upperLimit"
+    },
+    {
+      "columnName": "优先",
+      "columnEnName": "priority"
+    },
+    {
+      "columnName": "扣量规则类型",
+      "columnEnName": "deductionRuleType"
+    },
+    {
+      "columnName": "备注",
+      "columnEnName": "remark"
+    },
+    {
+      "columnName": "创建时间",
+      "columnEnName": "createTimestamp"
+    },
+    {
+      "columnName": "修改时间",
+      "columnEnName": "modifiedTimestamp"
+    }
+  ]
+}

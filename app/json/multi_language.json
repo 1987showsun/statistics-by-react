@@ -1,0 +1,142 @@
+{
+  "zh-tw": {
+    "form": {
+      "btn": {
+        "login": "登入",
+        "remove": "刪除",
+        "close": "關閉",
+        "add": "新增",
+        "submit": "送出"
+      },
+      "label": {
+        "username": "帳號",
+        "password": "密碼",
+        "name": "名字",
+        "nickname": "暱稱",
+        "auth": "權限",
+        "department": "部門",
+        "takeOffice": "到職日",
+        "leaveOffice": "離職日",
+        "salary": "薪資",
+        "action": "操作",
+        "eduName": "學校名稱",
+        "eduDepartment": "就讀系所",
+        "eduDate": "就讀時間",
+        "eduGraduation": "畢業狀態",
+        "expName": "公司名稱",
+        "expDepartment": "公司部門",
+        "expPosition": "職稱",
+        "expDate": "服務時間",
+        "expSupervisor": "單位主管 / 職位",
+        "expNote": "離職原因"
+      },
+      "placeholder": {
+        "username": "帳號",
+        "password": "密碼",
+        "name": "名字",
+        "nickname": "暱稱",
+        "auth": "權限",
+        "department": "部門",
+        "takeOffice": "到職日",
+        "leaveOffice": "離職日",
+        "salary": "薪資",
+        "action": "操作",
+        "eduName": "學校名稱",
+        "eduDepartment": "就讀系所",
+        "eduDate": "就讀時間",
+        "eduGraduation": "畢業狀態",
+        "expName": "公司名稱",
+        "expDepartment": "公司部門",
+        "expPosition": "職稱",
+        "expDate": "服務時間",
+        "expSupervisor": "單位主管 / 職位",
+        "expNote": "離職原因"
+      },
+      "add": {
+        "9": "帐号已存在，请重新输入",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": ""
+      }
+    },
+    "list": {
+      "noData": "請點選新增按鈕，新增輸入框"
+    },
+    "title": {
+      "information": "基本資料",
+      "edu": "學歷",
+      "exp": "經歷",
+      "specialty": "專業"
+    },
+    "nav": {
+      "member": "職員清單",
+      "user": "會員清單",
+      "store": "店家清單"
+    }
+  },
+  "zh-cn": {
+    "form": {
+      "placeholder": {
+        "userId": "请输入用户ID",
+        "brandId": "请输入品牌ID",
+        "brandName": "请输入品牌名称",
+        "channelName": "请输入渠道名称",
+        "channelId": "请输入渠道ID",
+        "userName": "请输入用户名字",
+        "nickName": "请输入用户昵称",
+        "accountType": "",
+        "pid": "请输入Pid",
+        "path": "请输入菜单路径",
+        "uri": "请输入菜单URL",
+        "menuName": "请输入菜单名称"
+      },
+      "add": {
+        "9": "帐号已存在，请重新输入",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": ""
+      },
+      "btn": {
+        "search": "搜寻",
+        "addBrand": "设置品牌",
+        "addUser": "设置用户",
+        "addRole": "设置角色",
+        "addMenu": "设置菜单",
+        "addChannel": "设置渠道",
+        "addPagecolumns": "设置菜单列"
+      },
+      "label": {
+        "searchTime": "搜寻时间",
+        "searchChannel": "搜寻渠道"
+      }
+    },
+    "note": {
+      "nonumber": "请输入正确数字",
+      "nodate": "请输入正确日期",
+      "nomail": "请输入正确信箱",
+      "required": "此栏位为必填栏位",
+      "duplicate": "重复的帐号",
+      "searchNoData": "查无任何资料",
+      "noData": "无资料",
+      "noSearchVal": "请输入搜寻名称"
+    },
+    "page": {
+      "Dashboard": {
+        "total": "游戏营利",
+        "chargeUserCount": "充值用户数量",
+        "chargeSum": "在线充值总额",
+        "pokerTaxScore": "棋牌总税收",
+        "newChargeUserCount": "新增充值用户数量",
+        "newUserBindRate": "新用户绑定率",
+        "userBindCount": "用户绑定账号数量",
+        "newUserCount": "新增用户数量"
+      }
+    }
+  }
+}

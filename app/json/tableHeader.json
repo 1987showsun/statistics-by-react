@@ -1,0 +1,490 @@
+{
+  "user": [
+    {
+      "id": 4,
+      "columnName": "用户帐号",
+      "columnEnName": "username",
+      "fixedKey": "username",
+      "key": 4,
+      "sort": false
+    },
+    {
+      "id": 0,
+      "columnName": "用户ID",
+      "columnEnName": "id",
+      "fixedKey": "id",
+      "key": 0,
+      "sort": false
+    },
+    {
+      "id": 1,
+      "columnName": "用户昵称",
+      "columnEnName": "nickName",
+      "fixedKey": "nickName",
+      "key": 1,
+      "sort": false
+    },
+    {
+      "id": 3,
+      "columnName": "用户权限",
+      "columnEnName": "accountType",
+      "fixedKey": "accountType",
+      "key": 3,
+      "sort": false
+    },
+    {
+      "id": 2,
+      "columnName": "启用状态",
+      "columnEnName": "enabled",
+      "fixedKey": "enabled",
+      "key": 2,
+      "sort": false
+    },
+    {
+      "id": 9,
+      "columnName": "创建时间",
+      "columnEnName": "createTimestamp",
+      "fixedKey": "createTimestamp",
+      "key": 9,
+      "sort": false
+    },
+    {
+      "id": 10,
+      "columnName": "更新时间",
+      "columnEnName": "modifiedTimestamp",
+      "fixedKey": "modifiedTimestamp",
+      "key": 10,
+      "sort": false
+    }
+  ],
+  "role": [
+    {
+      "id": 1,
+      "columnName": "角色中文名称",
+      "columnEnName": "roleName",
+      "fixedKey": "roleName",
+      "key": 1,
+      "sort": false
+    },
+    {
+      "id": 2,
+      "columnName": "角色英文名称",
+      "columnEnName": "roleEnName",
+      "fixedKey": "roleEnName",
+      "key": 2,
+      "sort": false
+    },
+    {
+      "id": 3,
+      "columnName": "创建时间",
+      "columnEnName": "createTimestamp",
+      "fixedKey": "createTimestamp",
+      "key": 3,
+      "sort": false
+    },
+    {
+      "id": 4,
+      "columnName": "更新时间",
+      "columnEnName": "modifiedTimestamp",
+      "fixedKey": "modifiedTimestamp",
+      "key": 4,
+      "sort": false
+    }
+  ],
+  "deductionRule": [
+    {
+      "id": 1,
+      "columnName": "扣量规则名称",
+      "columnEnName": "name",
+      "fixedKey": "name",
+      "key": 1,
+      "sort": false
+    },
+    {
+      "id": 2,
+      "columnName": "渠道id",
+      "columnEnName": "channelId",
+      "fixedKey": "channelId",
+      "key": 2,
+      "sort": false
+    },
+    {
+      "id": 3,
+      "columnName": "用户id",
+      "columnEnName": "userId",
+      "fixedKey": "userId",
+      "key": 3,
+      "sort": false
+    },
+    {
+      "id": 4,
+      "columnName": "开始时间戳",
+      "columnEnName": "beginTimestamp",
+      "fixedKey": "beginTimestamp",
+      "key": 4,
+      "sort": false
+    },
+    {
+      "id": 5,
+      "columnName": "结束时间戳",
+      "columnEnName": "endTimestamp",
+      "fixedKey": "endTimestamp",
+      "key": 5,
+      "sort": false
+    },
+    {
+      "id": 12,
+      "columnName": "需要操作的字段",
+      "columnEnName": "fieldToBeOperate",
+      "fixedKey": "fieldToBeOperate",
+      "key": 12,
+      "sort": false
+    },
+    {
+      "id": 6,
+      "columnName": "保底",
+      "columnEnName": "guarantee",
+      "fixedKey": "guarantee",
+      "key": 6,
+      "sort": false
+    },
+    {
+      "id": 7,
+      "columnName": "初始扣量",
+      "columnEnName": "init",
+      "fixedKey": "init",
+      "key": 7,
+      "sort": false
+    },
+    {
+      "id": 8,
+      "columnName": "步增",
+      "columnEnName": "step",
+      "fixedKey": "step",
+      "key": 8,
+      "sort": false
+    },
+    {
+      "id": 9,
+      "columnName": "上限",
+      "columnEnName": "upperLimit",
+      "fixedKey": "upperLimit",
+      "key": 9,
+      "sort": false
+    },
+    {
+      "id": 10,
+      "columnName": "优先",
+      "columnEnName": "priority",
+      "fixedKey": "priority",
+      "key": 10,
+      "sort": false
+    },
+    {
+      "id": 11,
+      "columnName": "扣量规则类型",
+      "columnEnName": "deductionRuleType",
+      "fixedKey": "deductionRuleType",
+      "key": 11,
+      "sort": false
+    },
+    {
+      "id": 13,
+      "columnName": "扣量规则备注",
+      "columnEnName": "remark",
+      "fixedKey": "remark",
+      "key": 13,
+      "sort": false
+    },
+    {
+      "id": 14,
+      "columnName": "创建时间",
+      "columnEnName": "createTimestamp",
+      "fixedKey": "createTimestamp",
+      "key": 14,
+      "sort": false
+    },
+    {
+      "id": 15,
+      "columnName": "更新时间",
+      "columnEnName": "modifiedTimestamp",
+      "fixedKey": "modifiedTimestamp",
+      "key": 15,
+      "sort": false
+    }
+  ],
+  "pageColumns": [
+    {
+      "id": 1,
+      "columnName": "菜单中文名称",
+      "columnEnName": "columnName",
+      "fixedKey": "columnName",
+      "key": 1,
+      "sort": false
+    },
+    {
+      "id": 2,
+      "columnName": "菜单英文名称",
+      "columnEnName": "columnEnName",
+      "fixedKey": "columnEnName",
+      "key": 2,
+      "sort": false
+    },
+    {
+      "id": 3,
+      "columnName": "排序权重",
+      "columnEnName": "sort",
+      "fixedKey": "sort",
+      "key": 3,
+      "sort": false
+    },
+    {
+      "id": 4,
+      "columnName": "所属菜单",
+      "columnEnName": "menuId",
+      "fixedKey": "menuId",
+      "key": 4,
+      "sort": false
+    },
+    {
+      "id": 5,
+      "columnName": "创建时间",
+      "columnEnName": "createTimestamp",
+      "fixedKey": "createTimestamp",
+      "key": 5,
+      "sort": false
+    },
+    {
+      "id": 6,
+      "columnName": "更新时间",
+      "columnEnName": "modifiedTimestamp",
+      "fixedKey": "modifiedTimestamp",
+      "key": 6,
+      "sort": false
+    }
+  ],
+  "brand": [
+    {
+      "id": 1,
+      "columnName": "品牌名称",
+      "columnEnName": "brandName",
+      "fixedKey": "brandName",
+      "key": 1,
+      "sort": false
+    },
+    {
+      "id": 2,
+      "columnName": "品牌ID",
+      "columnEnName": "id",
+      "fixedKey": "id",
+      "key": 2,
+      "sort": false
+    },
+    {
+      "id": 4,
+      "columnName": "创建时间",
+      "columnEnName": "createTimestamp",
+      "fixedKey": "createTimestamp",
+      "key": 4,
+      "sort": false
+    },
+    {
+      "id": 5,
+      "columnName": "更新时间",
+      "columnEnName": "modifiedTimestamp",
+      "fixedKey": "modifiedTimestamp",
+      "key": 5,
+      "sort": false
+    }
+  ],
+  "channel": [
+    {
+      "id": 1,
+      "columnName": "渠道名称",
+      "columnEnName": "channelName",
+      "fixedKey": "channelName",
+      "key": 1,
+      "sort": false
+    },
+    {
+      "id": 2,
+      "columnName": "渠道ID",
+      "columnEnName": "id",
+      "fixedKey": "id",
+      "key": 2,
+      "sort": false
+    },
+    {
+      "id": 3,
+      "columnName": "创建时间",
+      "columnEnName": "createTimestamp",
+      "fixedKey": "createTimestamp",
+      "key": 3,
+      "sort": false
+    },
+    {
+      "id": 4,
+      "columnName": "更新时间",
+      "columnEnName": "modifiedTimestamp",
+      "fixedKey": "modifiedTimestamp",
+      "key": 4,
+      "sort": false
+    }
+  ],
+  "menu": [
+    {
+      "id": 1,
+      "columnName": "菜单名称",
+      "columnEnName": "menuName",
+      "fixedKey": "menuName",
+      "key": 1,
+      "sort": false
+    },
+    {
+      "id": 2,
+      "columnName": "排序权重",
+      "columnEnName": "sort",
+      "fixedKey": "sort",
+      "key": 2,
+      "sort": false
+    },
+    {
+      "id": 2,
+      "columnName": "所属菜单",
+      "columnEnName": "pid",
+      "fixedKey": "sort",
+      "key": 2,
+      "sort": false
+    },
+    {
+      "id": 3,
+      "columnName": "菜单层级",
+      "columnEnName": "level",
+      "fixedKey": "level",
+      "key": 3,
+      "sort": false
+    },
+    {
+      "id": 4,
+      "columnName": "路径匹配规则",
+      "columnEnName": "uri",
+      "fixedKey": "uri",
+      "key": 4,
+      "sort": false
+    },
+    {
+      "id": 5,
+      "columnName": "菜单路径",
+      "columnEnName": "path",
+      "fixedKey": "path",
+      "key": 5,
+      "sort": false
+    },
+    {
+      "id": 6,
+      "columnName": "Icon 名称",
+      "columnEnName": "iconClass",
+      "fixedKey": "iconClass",
+      "key": 6,
+      "sort": false
+    },
+    {
+      "id": 7,
+      "columnName": "启用状态",
+      "columnEnName": "enabled",
+      "fixedKey": "enabled",
+      "key": 7,
+      "sort": false
+    },
+    {
+      "id": 8,
+      "columnName": "创建时间",
+      "columnEnName": "createTimestamp",
+      "fixedKey": "createTimestamp",
+      "key": 8,
+      "sort": false
+    },
+    {
+      "id": 9,
+      "columnName": "更新时间",
+      "columnEnName": "modifiedTimestamp",
+      "fixedKey": "modifiedTimestamp",
+      "key": 9,
+      "sort": false
+    }
+  ],
+  "operationLog": [
+    {
+      "id": 1,
+      "columnName": "操作类型",
+      "columnEnName": "operateType",
+      "fixedKey": "operateType",
+      "key": 1,
+      "sort": false
+    },
+    {
+      "id": 2,
+      "columnName": "用户帐号",
+      "columnEnName": "userName",
+      "fixedKey": "userName",
+      "key": 2,
+      "sort": false
+    },
+    {
+      "id": 3,
+      "columnName": "请求方法",
+      "columnEnName": "requestMethod",
+      "fixedKey": "requestMethod",
+      "key": 3,
+      "sort": false
+    },
+    {
+      "id": 4,
+      "columnName": "请求Url",
+      "columnEnName": "requestUrl",
+      "fixedKey": "requestUrl",
+      "key": 4,
+      "sort": false
+    },
+    {
+      "id": 5,
+      "columnName": "请求IP",
+      "columnEnName": "requestIp",
+      "fixedKey": "requestIp",
+      "key": 5,
+      "sort": false
+    },
+    {
+      "id": 6,
+      "columnName": "描述",
+      "columnEnName": "description",
+      "fixedKey": "description",
+      "key": 6,
+      "sort": false
+    },
+    {
+      "id": 7,
+      "columnName": "请求参数",
+      "columnEnName": "requestParams",
+      "fixedKey": "requestParams",
+      "key": 7,
+      "sort": false
+    },
+    {
+      "id": 8,
+      "columnName": "创建时间",
+      "columnEnName": "createTimestamp",
+      "fixedKey": "createTimestamp",
+      "key": 8,
+      "sort": false
+    },
+    {
+      "id": 9,
+      "columnName": "更新时间",
+      "columnEnName": "modifiedTimestamp",
+      "fixedKey": "modifiedTimestamp",
+      "key": 9,
+      "sort": false
+    }
+  ]
+}

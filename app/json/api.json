@@ -1,0 +1,81 @@
+{
+  "login"  : {
+    "sigin"        : "${apiUrl}login/login",
+    "sigout"       : "${apiUrl}login/logout"
+  },
+  "menuList" : {
+    "list"         : "${apiUrl}user/menuList"
+  },
+  "1" : {
+    "list"         : "${apiUrl}statistics/dashboard"
+  },
+  "3" : {
+    "channel"      : "${apiUrl}user/channelList",
+    "list"         : "${apiUrl}statistics/channelHistoryList"
+  },
+  "4" : {
+    "allChannel"   : "${apiUrl}user/allChannelList",
+    "list"         : "${apiUrl}statistics/chargeTotalEveryHour"
+  },
+  "5" : {
+    "list"         : "${apiUrl}statistics/onlineUser"
+  },
+  "6" : {
+    "allChannel"   : "${apiUrl}user/allChannelList",
+    "list"         : "${apiUrl}statistics/chargeUserCountEveryHour"
+  },
+  "7" : {
+    "allChannel"   : "${apiUrl}user/allChannelList",
+    "list"         : "${apiUrl}statistics/registrationEveryHour"
+  },
+  "9" : {
+    "list"          : "${apiUrl}admin/user/list",
+    "info"          : "${apiUrl}admin/user/get",
+    "add"           : "${apiUrl}admin/user/add",
+    "edit"          : "${apiUrl}admin/user/resetPwd4Admin",
+    "enabledfalse"  : "${apiUrl}admin/user/disableAccount",
+    "enabledtrue"   : "${apiUrl}admin/user/enableAccount"
+  },
+  "10" : {
+    "list"          : "${apiUrl}admin/role/list",
+    "info"          : "${apiUrl}admin/role/get",
+    "add"           : "${apiUrl}admin/role/add",
+    "edit"          : "${apiUrl}admin/role/update",
+    "remove"        : "${apiUrl}admin/role/del"
+  },
+  "11" : {
+    "list"          : "${apiUrl}admin/menu/list",
+    "info"          : "${apiUrl}admin/menu/get",
+    "add"           : "${apiUrl}admin/menu/add",
+    "edit"          : "${apiUrl}admin/menu/update",
+    "remove"        : "${apiUrl}admin/menu/del"
+  },
+  "12" : {
+    "list"          : "${apiUrl}admin/pageColumn/list",
+    "info"          : "${apiUrl}admin/pageColumn/get",
+    "add"           : "${apiUrl}",
+    "edit"          : "${apiUrl}admin/pageColumn/update",
+    "remove"        : "${apiUrl}admin/pageColumn/del"
+  },
+  "13" : {
+    "list"          : "${apiUrl}admin/brand/list",
+    "info"          : "${apiUrl}admin/brand/get",
+    "add"           : "${apiUrl}admin/brand/add",
+    "edit"          : "${apiUrl}admin/brand/update",
+    "remove"        : "${apiUrl}admin/brand/del"
+  },
+  "14" : {
+    "list"          : "${apiUrl}admin/channel/list",
+    "info"          : "${apiUrl}admin/channel/get",
+    "add"           : "${apiUrl}admin/channel/add",
+    "edit"          : "${apiUrl}admin/channel/update",
+    "remove"        : "${apiUrl}admin/channel/del"
+  },
+  "15" : {
+    "list"          : "${apiUrl}admin/deductionRule/list",
+    "info"          : "${apiUrl}admin/deductionRule/get",
+    "add"           : "${apiUrl}admin/deductionRule/add",
+    "edit"          : "${apiUrl}admin/deductionRule/update",
+    "remove"        : "${apiUrl}admin/deductionRule/del"
+  }
+}

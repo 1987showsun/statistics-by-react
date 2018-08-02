@@ -1,0 +1,72 @@
+{
+  "add" : {
+    "admin" : {
+      "9" : [
+        {
+          "add" : {
+            "name"      : "username",
+            "type"      : "text",
+            "data-type" : "input"
+          },
+          "edit" : {
+            "name"      : "username",
+            "type"      : "text",
+            "data-type" : "input"
+          }
+        },
+        {
+          "name"      : "password",
+          "type"      : "password",
+          "data-type" : "input"
+        },
+        {
+          "name"      : "accountType",
+          "type"      : "select",
+          "data-type" : "select"
+        }
+      ],
+      "10" : [
+        {
+          "name"      : "",
+          "type"      : "",
+          "data-type" : ""
+        }
+      ],
+      "11" : [
+        {
+        "name"      : "",
+        "type"      : "",
+        "data-type" : ""
+        }
+      ],
+      "12" : [
+        {
+          "name"      : "",
+          "type"      : "",
+          "data-type" : ""
+        }
+      ],
+      "13" : [
+        {
+          "name"      : "",
+          "type"      : "",
+          "data-type" : ""
+        }
+      ],
+      "14" : [
+        {
+          "name"      : "",
+          "type"      : "",
+          "data-type" : ""
+        }
+      ],
+      "15" : [
+        {
+          "name"      : "",
+          "type"      : "",
+          "data-type" : ""
+        }
+      ],
+    }
+  }
+}
