@@ -4,6 +4,8 @@ import { message } from "antd";
 import axios from "axios";
 import _ from "lodash";
 
+
+const reg = /(user\/getGoogleAuthQrCode|)/;
 //Actions
 import { loadingState } from "../../actions/loading";
 
@@ -31,7 +33,9 @@ export default class LoadingPage extends React.Component {
 
     axios.interceptors.response.use(
       response => {
+        const url = response.config.url;
         this.props.dispatch(loadingState(false));
+        if(url.match(reg)) return response;
         if (response.data.code != 0) message.warning(response.data.msg);
         return response;
       },

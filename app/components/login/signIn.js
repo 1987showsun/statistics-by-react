@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 //multi-language
-//import multiLanguage                                               from '../../json/multi_language';
+import multiLanguage                                               from '../../json/multi_language';
 
 //Actions
 import { signIn } from "../../actions/login";
@@ -21,7 +21,8 @@ export default class Signin extends React.Component {
       msg: props.loginStatusMsg,
       formObject: {
         username: "",
-        password: ""
+        password: "",
+        code    : ""
       }
     };
   }
@@ -77,6 +78,7 @@ export default class Signin extends React.Component {
                 type="text"
                 name="username"
                 value={this.state.formObject["username"]}
+                placeholder={multiLanguage['zh-cn']['form']['placeholder']['username']}
                 onChange={this.handleChange.bind(this)}
                 data-text-align="center"
               />
@@ -88,6 +90,19 @@ export default class Signin extends React.Component {
                 type="password"
                 name="password"
                 value={this.state.formObject["password"]}
+                placeholder={multiLanguage['zh-cn']['form']['placeholder']['pwd']}
+                onChange={this.handleChange.bind(this)}
+                data-text-align="center"
+              />
+            </div>
+          </li>
+          <li>
+            <div className="input-box">
+              <input
+                type="text"
+                name="code"
+                value={this.state.formObject["code"]}
+                placeholder={multiLanguage['zh-cn']['form']['placeholder']['code']}
                 onChange={this.handleChange.bind(this)}
                 data-text-align="center"
               />

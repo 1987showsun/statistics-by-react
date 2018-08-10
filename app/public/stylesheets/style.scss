@@ -55,6 +55,9 @@ span {
       &.edit {
         background: #fbbc05;
       }
+      &.qr{
+        background: #4CAF50;
+      }
     }
     &.check-yes {
       width: 100%;
@@ -374,7 +377,7 @@ body {
   overflow-x: auto;
 }
 
-.block-title {
+.block-title{
   width: 100%;
   display: flex;
   margin-bottom: 10px;
@@ -384,8 +387,8 @@ body {
   }
   .block-title-action {
     > li {
-      display: inline-flex;
-      padding: 0px 0px 0px 10px;
+      display      : inline-flex;
+      padding      : 0px 0px 0px 10px;
       &:first-child {
         padding-left: 0px;
       }
@@ -410,6 +413,22 @@ body {
               }
             }
           }
+        }
+      }
+    }
+  }
+}
+.ant-card-body{
+  .block-title-action {
+    > li {
+      display      : inline-flex;
+      margin-right : 10px;
+      &:last-child{
+        margin-right: 0px;
+      }
+      >span{
+        &::before{
+          margin-right: 5px;
         }
       }
     }

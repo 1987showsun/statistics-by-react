@@ -9,6 +9,7 @@ import Home from "../home";
 import Form from "../form";
 import Info from "../admin/admin_info";
 import LoadingPage from "../../components/module/loadingPage";
+import Verification from "../verification";
 
 import Nav from "../nav";
 import Header from "./header";
@@ -44,6 +45,7 @@ export default class Layout extends React.Component {
           <Route render={() => <Nav navSwitch={this.navSwitch.bind(this)} />} />
           <Switch>
             <Route exact path="/" component={Home} />
+            <Route exact path="/verification" component={Verification} />
             <Route exact path="/:type/:page" component={SelectRender} />
             <Route
               exact

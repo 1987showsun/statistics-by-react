@@ -117,8 +117,16 @@ export default class Header extends React.Component {
                     className="btn"
                     onClick={this.updatePassWord.bind(this)}
                   >
-                    修改密码
+                    重置密码
                   </span>
+                </li>
+                <li>
+                  <NavLink
+                    to={"/verification"}
+                    className="btn"
+                  >
+                    设置两步验证
+                  </NavLink>
                 </li>
               </ul>
             </div>

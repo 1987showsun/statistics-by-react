@@ -6,6 +6,7 @@ import $ from "jquery";
 //Components
 import Form from "../form";
 import Note from "../popup/note";
+import Qr   from "../popup/qr";
 
 //Actions
 import { popupAction } from "../../actions/popup";
@@ -88,6 +89,10 @@ export default class Popup extends React.Component {
 
       case "note":
         return <Note match={popupSetup.match} />;
+        break;
+
+      case "qr":
+        return <Qr match={popupSetup.match} />;
         break;
 
       default:

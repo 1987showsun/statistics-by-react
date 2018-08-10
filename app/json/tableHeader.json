@@ -33,6 +33,14 @@
       "sort": false
     },
     {
+      "id": 11,
+      "columnName": "两步验证状态",
+      "columnEnName": "twoStepVerifyStatus",
+      "fixedKey": "twoStepVerifyStatus",
+      "key": 11,
+      "sort": false
+    },
+    {
       "id": 2,
       "columnName": "启用状态",
       "columnEnName": "enabled",
@@ -510,6 +518,14 @@
       "columnEnName": "ip",
       "fixedKey": "ip",
       "key": 3,
+      "sort": false
+    },
+    {
+      "id": 4,
+      "columnName": "用户名",
+      "columnEnName": "userName",
+      "fixedKey": "userName",
+      "key": 4,
       "sort": false
     }
   ]

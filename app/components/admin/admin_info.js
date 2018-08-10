@@ -218,12 +218,13 @@ export default class AdminInfo extends React.Component {
   }
 
   popup(type, wantSettingsName) {
-    let navData = Object.assign([], this.state.navData);
+    let navData    = Object.assign([], this.state.navData);
     let popupSetup = this.state.popupSetup;
-    let page = this.props.match.params.page;
-    let types = "";
-    let pageName = "";
+    let page       = this.props.match.params.page;
+    let types      = "";
+    let pageName   = "";
     let componentObjectKeyName = "";
+    let qrData     = "";
 
     navData.map((item, i) => {
       if (item.id == 8) {
@@ -252,17 +253,19 @@ export default class AdminInfo extends React.Component {
               case "role":
                 popupSetup["title"] = lang["zh-cn"]["form"]["btn"]["addRole"];
                 break;
+
               case "brand":
                 popupSetup["title"] = lang["zh-cn"]["form"]["btn"]["addBrand"];
                 break;
+
               case "pagecolumns":
-                popupSetup["title"] =
-                  lang["zh-cn"]["form"]["btn"]["addPagecolumns"];
+                popupSetup["title"] = lang["zh-cn"]["form"]["btn"]["addPagecolumns"];
                 break;
+
               case "channel":
-                popupSetup["title"] =
-                  lang["zh-cn"]["form"]["btn"]["addChannel"];
+                popupSetup["title"] = lang["zh-cn"]["form"]["btn"]["addChannel"];
                 break;
+
               default:
                 break;
             }
@@ -289,14 +292,19 @@ export default class AdminInfo extends React.Component {
         }
         break;
 
+      case "qr":
+        popupSetup["types"] = `qr`;
+        popupSetup["title"] = `查看身份验证二维码`;
+        break;
+
       default:
         popupSetup["types"] = `note`;
         popupSetup["title"] = `刪除${pageName}`;
     }
 
-    popupSetup["status"] = "show";
-    popupSetup["data"] = this.state.info;
-    popupSetup["match"] = this.props.match;
+    popupSetup["status"]  = "show";
+    popupSetup["data"]    = this.state.info;
+    popupSetup["match"]   = this.props.match;
     popupSetup["actions"] = [type, componentObjectKeyName];
 
     this.props.dispatch(popupAction(popupSetup));
@@ -1171,24 +1179,19 @@ export default class AdminInfo extends React.Component {
   };
 
   fetchChannel = (params = {}, val) => {
-    let token = setup().token;
-    let id = this.state.match.params.id;
-    let apiUrl = setup().api[14][val];
+    let token     = setup().token;
+    let id        = this.state.match.params.id;
+    let apiUrl    = setup().api[14][val];
     const columns = [
       {
         title: "渠道名称",
         dataIndex: "channelName",
         sorter: true,
-        //render: name => `${name.first} ${name.last}`,
         width: "20%"
       },
       {
         title: "渠道ID",
         dataIndex: "channelId",
-        // filters: [
-        //   { text: "Male", value: "male" },
-        //   { text: "Female", value: "female" }
-        // ],
         width: "20%"
       },
       {
@@ -1477,14 +1480,25 @@ export default class AdminInfo extends React.Component {
               >
                 {this.judgmentHideRemoveBtn(page)}
                 <li style={{ display: "inline-flex" }}>
-                  <span
-                    className="btn action edit"
-                    onClick={this.popup.bind(this, "edit", "")}
-                  >
-                    <i className="icon fas fa-pencil-alt " />
-                    修改
+                  <span className="btn action edit fas fa-pencil-alt" onClick={this.popup.bind(this, "edit", "")} >
+                    {
+                      this.state.match['params']['page']=="9"?(
+                        " 重置密码"
+                      ):(
+                        " 修改"
+                      )
+                    }
                   </span>
                 </li>
+                {
+                  this.state.match['params']['page']=="9"&&
+                    this.state.info['twoStepVerifyStatus'] == 1 &&
+                      <li style={{ display: "inline-flex" }}>
+                        <span className="btn action qr fas fa-qrcode" onClick={this.popup.bind(this, "qr", "")}>
+                          查看验证二维码
+                        </span>
+                      </li>
+                }
               </ul>
               <ul className="list">
                 {this.renderContent()}

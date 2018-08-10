@@ -177,6 +177,7 @@ export default class User extends React.Component {
                   <option value="userId">用户ID</option>
                   <option value="enabled">启用状态</option>
                   <option value="accountType">用户权限</option>
+                  <option value="twoStepVerifyStatus">两步验证状态</option>
                 </select>
               </div>
             </li>
