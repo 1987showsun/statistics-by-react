@@ -17,9 +17,9 @@ export default class UserEdit extends React.Component {
       msg: props.popupMsg,
       formObject: {
         userId: props.seleEditData["id"],
-        oldPwd   : "",
-        firstPwd : "",
-        newPwd   : ""
+        oldPwd: "",
+        firstPwd: "",
+        newPwd: ""
       }
     };
   }
@@ -43,7 +43,7 @@ export default class UserEdit extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     let formObject = this.state.formObject;
-    let match      = this.state.match;
+    let match = this.state.match;
 
     if (formObject["firstPwd"] == formObject["newPwd"]) {
       if (formObject["newPwd"] != "") {
@@ -51,8 +51,8 @@ export default class UserEdit extends React.Component {
           formObject["newPwd"].length >= 6 &&
           formObject["newPwd"].length <= 16
         ) {
-            //this.props.dispatch(update(match, formObject));
-            this.props.dispatch( updateUserPassWord(formObject) );
+          //this.props.dispatch(update(match, formObject));
+          this.props.dispatch(updateUserPassWord(formObject));
         } else {
           this.setState({
             msg: "密碼長度不符"

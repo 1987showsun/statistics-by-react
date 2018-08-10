@@ -39,7 +39,7 @@ const TreeNode = Tree.TreeNode;
 
 @connect((state, props) => {
   return {
-    menuAllData: state.search.data,
+    menuAllData: state.nav.navData,
     navData: state.nav.navData,
     info: state.admin.info,
     popupStatus: state.popup.status,
@@ -48,7 +48,8 @@ const TreeNode = Tree.TreeNode;
     popupTitle: state.popup.title,
     popupMsg: state.popup.msg,
     popupActions: state.popup.actions,
-    accountTypeList: state.admin.accountTypeList
+    accountTypeList: state.admin.accountTypeList,
+    userIpTypeList: state.admin.userIpTypeList
   };
 })
 export default class AdminInfo extends React.Component {
@@ -56,6 +57,7 @@ export default class AdminInfo extends React.Component {
     super(props);
     this.state = {
       accountName: "",
+      userIpTypeName: "",
       rowSelectionState: undefined,
       selectedRowKeys: [],
 
@@ -124,7 +126,8 @@ export default class AdminInfo extends React.Component {
         ],
         "13": [1, 2],
         "14": [],
-        "15": [1, 10, 11, 13, 14, 15]
+        "15": [1, 10, 11, 13, 14, 15],
+        "83": []
       },
       match: props.match,
       menuAllData: props.menuAllData,
@@ -132,7 +135,9 @@ export default class AdminInfo extends React.Component {
       info: props.info,
       infoLabel: infoLabel[props.match.params.page],
       accountTypeList:
-        JSON.parse(localStorage.getItem("accountTypeList")) || null,
+        JSON.parse(sessionStorage.getItem("accountTypeList")) || null,
+      userIpTypeList:
+        JSON.parse(sessionStorage.getItem("userIpTypeList")) || null,
       popupSetup: {
         status: props.popupStatus,
         types: props.popupTypes,
@@ -168,6 +173,24 @@ export default class AdminInfo extends React.Component {
         if (accountName && accountName[0]) {
           this.setState({
             accountName: accountName[0].desc
+          });
+        }
+      }
+    }
+
+    if (
+      this.state.userIpTypeList &&
+      nextProps &&
+      nextProps.info !== this.props.info &&
+      nextProps.info.type
+    ) {
+      if (this.state.userIpTypeList && this.state.userIpTypeList.length > 0) {
+        let userIpTypeName = this.state.userIpTypeList.filter(el => {
+          return el.value === nextProps.info.type;
+        });
+        if (userIpTypeName && userIpTypeName[0]) {
+          this.setState({
+            userIpTypeName: userIpTypeName[0].desc
           });
         }
       }
@@ -365,6 +388,24 @@ export default class AdminInfo extends React.Component {
                 <div>
                   {this.state.info[item.columnEnName] != undefined && (
                     <div key={i}>{this.state.accountName}</div>
+                  )}
+                </div>
+              </li>
+            </ul>
+          </li>
+        );
+      } else if (item.columnEnName == "type") {
+        return (
+          <li key={i}>
+            <ul>
+              <li className="label">
+                {item.columnName}
+                <span>:</span>
+              </li>
+              <li>
+                <div>
+                  {this.state.info[item.columnEnName] != undefined && (
+                    <div key={i}>{this.state.userIpTypeName}</div>
                   )}
                 </div>
               </li>

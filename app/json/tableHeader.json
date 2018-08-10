@@ -486,5 +486,31 @@
       "key": 9,
       "sort": false
     }
+  ],
+  "userIpConfig": [
+    {
+      "id": 1,
+      "columnName": "用戶ID",
+      "columnEnName": "userId",
+      "fixedKey": "userId",
+      "key": 1,
+      "sort": false
+    },
+    {
+      "id": 2,
+      "columnName": "登录类型",
+      "columnEnName": "type",
+      "fixedKey": "type",
+      "key": 2,
+      "sort": false
+    },
+    {
+      "id": 3,
+      "columnName": "用戶IP",
+      "columnEnName": "ip",
+      "fixedKey": "ip",
+      "key": 3,
+      "sort": false
+    }
   ]
 }

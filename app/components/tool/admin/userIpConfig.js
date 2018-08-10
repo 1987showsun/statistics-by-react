@@ -14,11 +14,7 @@ import Axios from "axios";
 @connect((state, props) => {
   return {
     limit: state.admin.limit,
-    menuList: state.admin.menuList,
-    accountTypeList: state.admin.accountTypeList,
-    enabledList: state.admin.enabledList,
-    fieldToBeOperateList: state.admin.fieldToBeOperateList,
-    deductionRuleTypeList: state.admin.deductionRuleTypeList,
+    typeList: state.admin.userIpTypeList,
     popupStatus: state.popup.status,
     popupTypes: state.popup.types,
     popupData: state.popup.data,
@@ -27,18 +23,14 @@ import Axios from "axios";
     popupActions: state.popup.actions
   };
 })
-export default class User extends React.Component {
+export default class UserIpConfig extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       limit: props.limit,
       match: props.match,
-      menuList: props.menuList,
       nowPageNumber: props.match.params.nowPageNumber || 1,
-      enabledList: props.enabledList,
-      accountTypeList: props.accountTypeList,
-      fieldToBeOperateList: props.fieldToBeOperateList,
-      deductionRuleTypeList: props.deductionRuleTypeList,
+      typeList: props.typeList,
       searchFormObject: {
         searchType: "",
         searchVal: ""
@@ -80,8 +72,7 @@ export default class User extends React.Component {
     this.setState({
       limit: nextProps.limit,
       nowPageNumber: nextProps.match.params.nowPageNumber || 1,
-      enabledList: nextProps.enabledList,
-      accountTypeList: nextProps.accountTypeList,
+      typeList: nextProps.typeList,
       popupSetup: popupSetup
     });
   }
@@ -111,9 +102,9 @@ export default class User extends React.Component {
     let popupSetup = this.state.popupSetup;
     popupSetup["status"] = "show";
     popupSetup["types"] = "form";
-    popupSetup["title"] = "新增帳號";
+    popupSetup["title"] = "新增用戶IP";
     popupSetup["match"] = this.props.match;
-    popupSetup["actions"] = ["add", "user"];
+    popupSetup["actions"] = ["add", "userIpConfig"];
 
     this.props.dispatch(popupAction(popupSetup));
   }
@@ -121,7 +112,7 @@ export default class User extends React.Component {
   selectRenderInputView() {
     let searchType = this.state.searchFormObject["searchType"];
     if (searchType != "") {
-      if (searchType != "enabled" && searchType != "accountType") {
+      if (searchType != "type" && searchType != "accountType") {
         return (
           <li>
             <div className="input-box">
@@ -144,7 +135,7 @@ export default class User extends React.Component {
           <li>
             <div className="input-box" data-type="select">
               <select name="searchVal" onChange={this.handleChange.bind(this)}>
-                <option value="">请选择帐号状态</option>
+                <option value="">请选择登录类型</option>
                 {this.state[searchType + "List"] &&
                   this.state[searchType + "List"].map((item, i) => {
                     return (
@@ -173,10 +164,9 @@ export default class User extends React.Component {
                   onChange={e => this.handleChange(e, true)}
                 >
                   <option value="">请选择搜寻条件</option>
-                  <option value="userName">用户帐号</option>
-                  <option value="userId">用户ID</option>
-                  <option value="enabled">启用状态</option>
-                  <option value="accountType">用户权限</option>
+                  <option value="userId">用戶ID</option>
+                  <option value="type">登录类型</option>
+                  <option value="ip">用戶IP</option>
                 </select>
               </div>
             </li>

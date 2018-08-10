@@ -20,7 +20,7 @@ const TreeNode = Tree.TreeNode;
     seleEditData: state.popup.data,
     menuList: state.admin.userMenulist,
     menuPageColumnsList: state.admin.pageColumnList,
-    loadingState : state.loading.state
+    loadingState: state.loading.state
   };
 })
 export default class UserPageColumns extends React.Component {
@@ -164,12 +164,24 @@ export default class UserPageColumns extends React.Component {
           <li>
             <ul>
               <li style={{ maxHeight: "200px", overflow: "auto" }}>
-                { this.props.loadingState &&
+                {this.props.loadingState && (
                   <div className="loadingBox">
-                    <div className="lds-css ng-scope"><div className="lds-spinner" style={{"height":"100%"}}><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+                    <div className="lds-css ng-scope">
+                      <div className="lds-spinner" style={{ height: "100%" }}>
+                        <div />
+                        <div />
+                        <div />
+                        <div />
+                        <div />
+                        <div />
+                        <div />
+                        <div />
+                        <div />
+                        <div />
+                      </div>
                     </div>
                   </div>
-                }
+                )}
                 {treeDisplay && (
                   <Tree
                     checkable

@@ -1,44 +1,41 @@
-import React, { Component }                           from 'react';
-import { connect }                                    from 'react-redux';
-import { Line }                                       from 'react-chartjs-2';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { Line } from "react-chartjs-2";
 
 //Actions
-import { onlineUser }                                 from '../../actions/charts';
+import { onlineUser } from "../../actions/charts";
 
-@connect((state,props)=>{
-  return{
-    navData              : state.nav.navData,
-    onlineUser           : state.charts.onlineUser,
-  }
+@connect((state, props) => {
+  return {
+    navData: state.nav.navData,
+    onlineUser: state.charts.onlineUser
+  };
 })
-
-export default class OnlineUser extends React.Component{
-
-  constructor(props){
+export default class OnlineUser extends React.Component {
+  constructor(props) {
     super(props);
     this.state = {
-      charts   : props.onlineUser
-    }
+      charts: props.onlineUser
+    };
   }
 
   componentDidMount() {
-    this.props.dispatch( onlineUser() );
-
+    this.props.dispatch(onlineUser());
   }
 
   componentWillReceiveProps(nextProps) {
     this.setState({
-      charts   : nextProps.onlineUser
-    })
+      charts: nextProps.onlineUser
+    });
   }
 
-  render(){
-    return(
+  render() {
+    return (
       <Line
-          data    = {this.state.charts}
-          options = {{maintainAspectRatio: false}}
-          height  = {500}
-          width   = {700}
+        data={this.state.charts}
+        options={{ maintainAspectRatio: false }}
+        height={500}
+        width={700}
       />
     );
   }

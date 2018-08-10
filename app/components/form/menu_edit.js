@@ -7,7 +7,7 @@ import { update } from "../../actions/admin/update";
 
 @connect((state, props) => {
   return {
-    popupMsg     : state.popup.msg,
+    popupMsg: state.popup.msg,
     seleEditData: state.popup.data
   };
 })
@@ -16,7 +16,7 @@ export default class MenuEdit extends React.Component {
     super(props);
     this.state = {
       match: props.match,
-      msg  : props.popupMsg,
+      msg: props.popupMsg,
       formObject: {
         id: props.seleEditData["id"],
         menuName: props.seleEditData["menuName"],
@@ -33,8 +33,8 @@ export default class MenuEdit extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     this.setState({
-      msg                   : nextProps.popupMsg
-    })
+      msg: nextProps.popupMsg
+    });
   }
 
   handleChange(e) {
@@ -49,11 +49,11 @@ export default class MenuEdit extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    let formObject = Object.assign({},this.state.formObject);
-    let match      = this.state.match;
+    let formObject = Object.assign({}, this.state.formObject);
+    let match = this.state.match;
 
-    formObject['path'] = encodeURIComponent( formObject['path'] );
-    formObject['uri']  = encodeURIComponent( formObject['uri'] );
+    formObject["path"] = encodeURIComponent(formObject["path"]);
+    formObject["uri"] = encodeURIComponent(formObject["uri"]);
 
     this.props.dispatch(update(match, formObject));
   }

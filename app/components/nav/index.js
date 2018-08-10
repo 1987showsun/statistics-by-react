@@ -140,7 +140,9 @@ export default class Nav extends React.Component {
             {this.state.navData.map((item, i) => {
               return (
                 <li key={i}>
-                  <span onClick={e => this.menuClick(item, i)}>{this.navlevel1(item)}</span>
+                  <span onClick={e => this.menuClick(item, i)}>
+                    {this.navlevel1(item)}
+                  </span>
                   {this.navlevel2(item)}
                 </li>
               );

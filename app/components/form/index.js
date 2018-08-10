@@ -9,6 +9,7 @@ import FormBrandAdd from "./brand_add";
 import FormDeductionRule from "./deductionRule_add";
 import FormPageColumns from "./pageColumns_add";
 import FormChannel from "./channel_add";
+import FormUserIpConfig from "./userIpConfig_add";
 
 //更新的 Component form
 import EditUser from "./user_edit";
@@ -19,6 +20,7 @@ import EditPageColumns from "./pageColumns_edit";
 import EditBrand from "./brand_edit";
 import EditChannel from "./channel_edit";
 import EditDeductionRule from "./deductionRule_edit";
+import EditUserIpConfig from "./userIpConfig_edit";
 
 //設置的 Component form
 import SettingsUserRole from "./user_role";
@@ -59,17 +61,19 @@ export default class Form extends React.Component {
           brand: FormBrandAdd,
           deductionRule: FormDeductionRule,
           pageColumns: FormPageColumns,
-          channel: FormChannel
+          channel: FormChannel,
+          userIpConfig: FormUserIpConfig
         },
         edit: {
-          user       : EditUser,
-          role       : EditRole,
-          menu       : EditMenu,
-          pageColumn : EditPageColumns,
-          brand      : EditBrand,
-          channel    : EditChannel,
+          user: EditUser,
+          role: EditRole,
+          menu: EditMenu,
+          pageColumn: EditPageColumns,
+          brand: EditBrand,
+          channel: EditChannel,
           deductionRule: EditDeductionRule,
-          userPassword : EditUserPassword
+          userPassword: EditUserPassword,
+          userIpConfig: EditUserIpConfig
         },
         remove: {
           all: RemoveAll
@@ -114,9 +118,11 @@ export default class Form extends React.Component {
   }
 
   selectReanderFormView() {
-    let type = this.state.match.params!=undefined? this.state.match.params.type : "";
-    let page = this.state.match.params!=undefined? this.state.match.params.page : "";
-    let popupSetup  = this.state.popupSetup;
+    let type =
+      this.state.match.params != undefined ? this.state.match.params.type : "";
+    let page =
+      this.state.match.params != undefined ? this.state.match.params.page : "";
+    let popupSetup = this.state.popupSetup;
     let actionsType = popupSetup.actions[0];
     let actionsName = popupSetup.actions[1];
     let ComponentName;

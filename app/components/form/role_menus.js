@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import axios from 'axios';
+import axios from "axios";
 import { Tree } from "antd";
 
 const TreeNode = Tree.TreeNode;
@@ -29,11 +29,11 @@ export default class RoleEdit extends React.Component {
       msg: props.popupMsg,
       allRoleList: props.allRoleList,
       formObject: {
-        id      : props.seleEditData['id'],
-        menuIds : []
+        id: props.seleEditData["id"],
+        menuIds: []
       },
       treeDom: null,
-      ready: false,
+      ready: false
     };
   }
 
@@ -54,10 +54,13 @@ export default class RoleEdit extends React.Component {
       })
       .then(res => {
         const menulist = _.get(res, "data.data.list", []);
-        const roleId = this.props.seleEditData['id'];
+        const roleId = this.props.seleEditData["id"];
         const roleMenuIdArr = this.filterRoleMenu(menulist, roleId);
         const formObject = this.state.formObject;
-        formObject.menuIds = [...roleMenuIdArr.checked,...roleMenuIdArr.halfChecked];
+        formObject.menuIds = [
+          ...roleMenuIdArr.checked,
+          ...roleMenuIdArr.halfChecked
+        ];
 
         this.setState({
           treeDom: (
@@ -70,9 +73,8 @@ export default class RoleEdit extends React.Component {
             </Tree>
           ),
           ready: true,
-          formObject,
-          
-        })
+          formObject
+        });
       });
   }
 
@@ -98,7 +100,9 @@ export default class RoleEdit extends React.Component {
         const isHalfChecked = children.some(
           child => !child.roles.some(role => role.id == id)
         );
-        isHalfChecked ? dfArr.halfChecked.push(el.id.toString()) : dfArr.checked.push(el.id.toString());
+        isHalfChecked
+          ? dfArr.halfChecked.push(el.id.toString())
+          : dfArr.checked.push(el.id.toString());
         if (children.length > 0) {
           this.filterRoleMenu(children, id, dfArr);
         }
@@ -109,7 +113,9 @@ export default class RoleEdit extends React.Component {
 
   checkBoxBackArray(array) {
     let formObject = Object.assign({}, this.state.formObject);
-    formObject['menuIds'] = array.map((item, i) => { return item.checkBoxId });
+    formObject["menuIds"] = array.map((item, i) => {
+      return item.checkBoxId;
+    });
 
     this.setState({
       formObject: formObject
@@ -120,11 +126,11 @@ export default class RoleEdit extends React.Component {
     const formObject = this.state.formObject;
     formObject.menuIds = [...checkedKeys, ...info.halfCheckedKeys];
     this.setState({ formObject });
-  }
+  };
 
   handleSubmit(e) {
     e.preventDefault();
-    if(!this.state.ready) return;
+    if (!this.state.ready) return;
     let formObject = Object.assign({}, this.state.formObject);
     let match = this.state.match;
     this.props.dispatch(update_role_menus(match, formObject));
@@ -142,13 +148,25 @@ export default class RoleEdit extends React.Component {
         <ul className={`admin-ul`}>
           <li>
             <ul>
-              <li style={{ overflow: 'auto', maxHeight: '500px' }}>
-                {this.props.loadingState &&
+              <li style={{ overflow: "auto", maxHeight: "500px" }}>
+                {this.props.loadingState && (
                   <div className="loadingBox">
-                    <div className="lds-css ng-scope"><div className="lds-spinner" style={{ "height": "100%" }}><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+                    <div className="lds-css ng-scope">
+                      <div className="lds-spinner" style={{ height: "100%" }}>
+                        <div />
+                        <div />
+                        <div />
+                        <div />
+                        <div />
+                        <div />
+                        <div />
+                        <div />
+                        <div />
+                        <div />
+                      </div>
                     </div>
                   </div>
-                }
+                )}
                 {this.state.treeDom}
               </li>
             </ul>

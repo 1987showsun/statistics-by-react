@@ -28,7 +28,7 @@
         "expPosition": "職稱",
         "expDate": "服務時間",
         "expSupervisor": "單位主管 / 職位",
-        "expNote": "離職原因"
+        "expNote": "请输入ip"
       },
       "placeholder": {
         "username": "帳號",
@@ -50,7 +50,8 @@
         "expPosition": "職稱",
         "expDate": "服務時間",
         "expSupervisor": "單位主管 / 職位",
-        "expNote": "離職原因"
+        "expNote": "離職原因",
+        "ip": "離職原因"
       },
       "add": {
         "9": "帐号已存在，请重新输入",
@@ -91,7 +92,8 @@
         "pid": "请输入Pid",
         "path": "请输入菜单路径",
         "uri": "请输入菜单URL",
-        "menuName": "请输入菜单名称"
+        "menuName": "请输入菜单名称",
+        "ip": "请输入ip"
       },
       "add": {
         "9": "帐号已存在，请重新输入",

@@ -212,5 +212,19 @@
       "columnName": "修改时间",
       "columnEnName": "modifiedTimestamp"
     }
+  ],
+  "83": [
+    {
+      "columnName": "用戶ID",
+      "columnEnName": "userId"
+    },
+    {
+      "columnName": "登录类型",
+      "columnEnName": "type"
+    },
+    {
+      "columnName": "用戶IP",
+      "columnEnName": "ip"
+    }
   ]
 }

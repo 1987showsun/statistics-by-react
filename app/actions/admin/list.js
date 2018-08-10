@@ -158,6 +158,9 @@ export function reloadList(match, reloadaxiosUrl, wantCombinationParams) {
         case "16":
           operationLog(resData, dispatch);
           break;
+        case "83":
+          userIpConfig(resData, dispatch);
+          break;
 
         default:
       }
@@ -187,7 +190,7 @@ const user = (resData, dispatch) => {
         }
       });
 
-      localStorage.setItem(
+      sessionStorage.setItem(
         "accountTypeList",
         JSON.stringify(resData.data.accountTypeList)
       );
@@ -440,6 +443,43 @@ const operationLog = (resData, dispatch) => {
     limit: limit,
     requestMethodList: requestMethodList,
     operateTypeList: operateTypeList,
+    data: list
+  });
+};
+
+const userIpConfig = (resData, dispatch) => {
+  let code = resData.code;
+  let msg = resData.msg;
+  let currentPage = resData.data.currentPage;
+  let total = resData.data.total;
+  let limit = resData.data.limit;
+  let typeList = resData.data.typeList;
+  let list = resData.data.list;
+
+  if (list && list.length >= 0) {
+    list.map((item, i) => {
+      typeList.map(typeItem => {
+        if (item["type"] == typeItem["value"]) {
+          item["type"] = typeItem["desc"];
+        }
+      });
+    });
+  }
+
+  sessionStorage.setItem(
+    "userIpTypeList",
+    JSON.stringify(resData.data.typeList)
+  );
+
+  loading(true)(dispatch);
+  dispatch({
+    type: "ADMIN_USER_IP_CONFIG_LIST",
+    code: code,
+    msg: msg,
+    currentPage: currentPage,
+    total: total,
+    limit: limit,
+    typeList: typeList,
     data: list
   });
 };

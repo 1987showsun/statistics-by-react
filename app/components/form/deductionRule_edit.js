@@ -15,7 +15,7 @@ import { update } from "../../actions/admin/update";
     deductionRuleTypeList: state.admin.deductionRuleTypeList,
     fieldToBeOperateList: state.admin.fieldToBeOperateList,
     channelList: state.charts.allChannelList,
-    deFfieldToBeOperate: state.admin.info.fieldToBeOperate,
+    deFfieldToBeOperate: state.admin.info.fieldToBeOperate
   };
 })
 export default class RuleEdit extends React.Component {
@@ -27,7 +27,10 @@ export default class RuleEdit extends React.Component {
       deductionRuleTypeList: props.deductionRuleTypeList,
       channelList: props.channelList,
       msg: props.popupMsg,
-      isAmount: !(props.deFfieldToBeOperate == 'newUserBindCount' || props.deFfieldToBeOperate == 'userBindCount'),
+      isAmount: !(
+        props.deFfieldToBeOperate == "newUserBindCount" ||
+        props.deFfieldToBeOperate == "userBindCount"
+      ),
       formObject: {
         id: props.seleEditData["id"],
         name: props.seleEditData["name"],
@@ -40,7 +43,7 @@ export default class RuleEdit extends React.Component {
         deductionRuleType: props.seleEditData["deductionRuleType"],
         remark: props.seleEditData["remark"],
         channelId: props.seleEditData["channelId"],
-        fieldToBeOperate: props.deFfieldToBeOperate,
+        fieldToBeOperate: props.deFfieldToBeOperate
       },
       checkBoxSetup: {
         wantUseApi: "searchChannel", //想使用的 Api
@@ -84,7 +87,7 @@ export default class RuleEdit extends React.Component {
       }
     };
   }
-    
+
   componentWillReceiveProps(nextProps) {
     this.setState({
       msg: nextProps.popupMsg,
@@ -111,17 +114,17 @@ export default class RuleEdit extends React.Component {
   }
 
   handleChange(e) {
-    let formObject = {...this.state.formObject};
+    let formObject = { ...this.state.formObject };
     let name = e.target.name;
     let val = e.target.value;
     let isAmount = this.state.isAmount;
-    
+
     formObject[name] = val;
 
-    if(name == 'fieldToBeOperate'){
-      isAmount = !(val == 'newUserBindCount' || val == 'userBindCount');
+    if (name == "fieldToBeOperate") {
+      isAmount = !(val == "newUserBindCount" || val == "userBindCount");
     }
-    
+
     this.setState({
       formObject: formObject,
       isAmount
@@ -158,7 +161,7 @@ export default class RuleEdit extends React.Component {
       }
     }
 
-    if(this.state.isAmount){
+    if (this.state.isAmount) {
       formObject["guarantee"] = Number(formObject["guarantee"]) * 100;
     }
     formObject["init"] = Number(formObject["init"]) / 100;
@@ -238,11 +241,11 @@ export default class RuleEdit extends React.Component {
                     min="0"
                     required
                   />
-                  {
-                    this.state.isAmount ?
-                      <span className="unit">元</span>:
-                      <span className="unit">个</span>
-                  }
+                  {this.state.isAmount ? (
+                    <span className="unit">元</span>
+                  ) : (
+                    <span className="unit">个</span>
+                  )}
                 </div>
               </li>
             </ul>

@@ -60,8 +60,8 @@ export default class MenuAdd extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    let limit      = this.state.limit;
-    let match      = this.state.match;
+    let limit = this.state.limit;
+    let match = this.state.match;
     let formObject = this.state.formObject;
     this.props.dispatch(admin_add(match, limit, formObject));
   }

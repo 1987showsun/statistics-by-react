@@ -7,8 +7,8 @@ import CheckBox from "../input/checkBox";
 
 //Actions
 
-import { update_channel_user }                        from '../../actions/admin/update';
-import { setup }                                      from '../../actions/setup';
+import { update_channel_user } from "../../actions/admin/update";
+import { setup } from "../../actions/setup";
 
 @connect((state, props) => {
   return {
@@ -21,17 +21,17 @@ export default class UserEdit extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectOpenStatus  : "hide",
-      match             : props.match,
-      msg               : props.popupMsg,
-      allRoleList       : props.allRoleList,
-      checkBoxSetup     : {
-        wantUseApi            : "searchUser",       //想使用的 Api
-        useApiUrl             : setup().api['makeUp']['searchUser'],
-        multiple              : false,              //複選 true:開啟 false:關閉
-        showSearchBox         : true,               //搜尋輸入框 true:顯示 false:隱藏
-        inputName             : "userName",         //搜尋輸入框  inputName
-        selectedData          : []
+      selectOpenStatus: "hide",
+      match: props.match,
+      msg: props.popupMsg,
+      allRoleList: props.allRoleList,
+      checkBoxSetup: {
+        wantUseApi: "searchUser", //想使用的 Api
+        useApiUrl: setup().api["makeUp"]["searchUser"],
+        multiple: false, //複選 true:開啟 false:關閉
+        showSearchBox: true, //搜尋輸入框 true:顯示 false:隱藏
+        inputName: "userName", //搜尋輸入框  inputName
+        selectedData: []
       },
       formObject: {
         channelId: props.seleEditData["id"],
@@ -49,9 +49,11 @@ export default class UserEdit extends React.Component {
 
   checkBoxBackArray(array) {
     let formObject = Object.assign({}, this.state.formObject);
-    formObject["userId"] = array.map((item, i) => {
-      return item['checkBoxId'];
-    }).toString();
+    formObject["userId"] = array
+      .map((item, i) => {
+        return item["checkBoxId"];
+      })
+      .toString();
     formObject["userNames"] = array.map((item, i) => {
       return item.checkBoxName;
     });
@@ -87,10 +89,10 @@ export default class UserEdit extends React.Component {
               <li className="label">请选取用戶</li>
               <li>
                 <CheckBox
-                  checkBoxSetup     = {this.state.checkBoxSetup}
-                  searchFormObject  = {this.state.formObject}
-                  checkBoxBackArray = {this.checkBoxBackArray.bind(this)}
-                  useApiUrl         = {this.state.checkBoxSetup['useApiUrl']}
+                  checkBoxSetup={this.state.checkBoxSetup}
+                  searchFormObject={this.state.formObject}
+                  checkBoxBackArray={this.checkBoxBackArray.bind(this)}
+                  useApiUrl={this.state.checkBoxSetup["useApiUrl"]}
                 />
               </li>
             </ul>

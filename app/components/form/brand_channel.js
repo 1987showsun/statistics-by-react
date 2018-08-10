@@ -56,7 +56,7 @@ export default class UserEdit extends React.Component {
   checkBoxBackArray(array) {
     let searchFormObject = Object.assign({}, this.state.searchFormObject);
     searchFormObject["channelIds"] = array.map((item, i) => {
-      return item['checkBoxId'];
+      return item["checkBoxId"];
     });
     searchFormObject["channelNames"] = array.map((item, i) => {
       return item.checkBoxName;

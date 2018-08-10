@@ -11,11 +11,12 @@ export default class CheckBox extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      optionSwitchStatus : "hide",
-      allChannelList     : [],
-      selectedItems      : props.checkBoxSetup["selectedData"],
-      searchFormObject   : props.searchFormObject,
-      useApiUrl          : props.useApiUrl || "http://192.168.211.1:8090/admin/channel/list",
+      optionSwitchStatus: "hide",
+      allChannelList: [],
+      selectedItems: props.checkBoxSetup["selectedData"],
+      searchFormObject: props.searchFormObject,
+      useApiUrl:
+        props.useApiUrl || "http://192.168.211.1:8090/admin/channel/list"
     };
   }
 
@@ -71,15 +72,18 @@ export default class CheckBox extends React.Component {
 
   render() {
     return (
-      <div className="multiple" style={{ position: "relative", minWidth: "200px" }}>
+      <div
+        className="multiple"
+        style={{ position: "relative", minWidth: "200px" }}
+      >
         <div
           className="input-box"
           data-type="check-select"
           style={{
-            fontSize  : ".8em",
-            alignItem : "center",
-            display   : "flex",
-            padding   : "0px 30px 0px 0px"
+            fontSize: ".8em",
+            alignItem: "center",
+            display: "flex",
+            padding: "0px 30px 0px 0px"
           }}
         >
           {this.state.selectedItems &&
@@ -107,13 +111,13 @@ export default class CheckBox extends React.Component {
         </div>
 
         <CheckBoxOption
-          useApiUrl              = {this.state.useApiUrl}
-          checkBoxSetup          = {this.props.checkBoxSetup}
-          selectedItems          = {this.props.checkBoxSetup["selectedData"]}
-          searchFormObject       = {this.state.searchFormObject}
-          optionSwitchStatus     = {this.state.optionSwitchStatus}
-          selectedPushObject     = {this.selectedPushObject.bind(this)}
-          selectSwitch           = {this.selectSwitch.bind(this)}
+          useApiUrl={this.state.useApiUrl}
+          checkBoxSetup={this.props.checkBoxSetup}
+          selectedItems={this.props.checkBoxSetup["selectedData"]}
+          searchFormObject={this.state.searchFormObject}
+          optionSwitchStatus={this.state.optionSwitchStatus}
+          selectedPushObject={this.selectedPushObject.bind(this)}
+          selectSwitch={this.selectSwitch.bind(this)}
         />
       </div>
     );

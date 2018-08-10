@@ -7,7 +7,7 @@ import { admin_add } from "../../actions/admin/list";
 
 @connect((state, props) => {
   return {
-    popupMsg     : state.popup.msg,
+    popupMsg: state.popup.msg,
     limit: state.admin.limit
   };
 })
@@ -15,20 +15,20 @@ export default class MemberAdd extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      limit       : props.limit,
-      match       : props.match,
-      msg         : props.popupMsg,
-      formObject  : {
-        roleName    : "",
-        roleEnName  : ""
+      limit: props.limit,
+      match: props.match,
+      msg: props.popupMsg,
+      formObject: {
+        roleName: "",
+        roleEnName: ""
       }
     };
   }
 
   componentWillReceiveProps(nextProps) {
     this.setState({
-      msg            : nextProps.popupMsg
-    })
+      msg: nextProps.popupMsg
+    });
   }
 
   handleChange(e) {

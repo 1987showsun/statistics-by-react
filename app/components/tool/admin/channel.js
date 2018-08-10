@@ -51,13 +51,13 @@ export default class User extends React.Component {
     };
   }
 
-  handleChange(e,main) {
+  handleChange(e, main) {
     let searchFormObject = this.state.searchFormObject;
     let name = e.target.name;
     let val = e.target.value;
 
     searchFormObject[name] = val;
-    if(main) searchFormObject.searchVal = '';
+    if (main) searchFormObject.searchVal = "";
 
     this.setState({
       searchFormObject: searchFormObject
@@ -89,17 +89,16 @@ export default class User extends React.Component {
     };
     let match = this.state.match;
     let limit = this.state.limit;
-    this.props.dispatch(admin_list(match, limit, searchFormObject))
-      .then(()=>{
-        this.props.history.push({
-          pathname:`/${this.props.match.params.type}/${this.props.match.params.page}/1`,
-          state:{
-            noRefresh:true,
-          },
-        });
+    this.props.dispatch(admin_list(match, limit, searchFormObject)).then(() => {
+      this.props.history.push({
+        pathname: `/${this.props.match.params.type}/${
+          this.props.match.params.page
+        }/1`,
+        state: {
+          noRefresh: true
+        }
       });
-
-
+    });
   }
 
   popup() {
@@ -122,7 +121,7 @@ export default class User extends React.Component {
               <div className="input-box" data-type="select">
                 <select
                   name="searchType"
-                  onChange={ e => this.handleChange(e,true)}
+                  onChange={e => this.handleChange(e, true)}
                 >
                   <option value="">请选择搜寻条件</option>
                   {/*<option value="userId">用户ID</option>

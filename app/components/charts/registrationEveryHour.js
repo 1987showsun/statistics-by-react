@@ -1,43 +1,41 @@
-import React, { Component }                           from 'react';
-import { connect }                                    from 'react-redux';
-import { Line }                                       from 'react-chartjs-2';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { Line } from "react-chartjs-2";
 
 //Actions
-import { registrationEveryHour }                      from '../../actions/charts';
+import { registrationEveryHour } from "../../actions/charts";
 
-@connect((state,props)=>{
-  return{
-    navData                 : state.nav.navData,
-    registrationEveryHour   : state.charts.registrationEveryHour,
-  }
+@connect((state, props) => {
+  return {
+    navData: state.nav.navData,
+    registrationEveryHour: state.charts.registrationEveryHour
+  };
 })
-
-export default class RegistrationEveryHour extends React.Component{
-
-  constructor(props){
+export default class RegistrationEveryHour extends React.Component {
+  constructor(props) {
     super(props);
     this.state = {
-      charts                : props.registrationEveryHour,
-    }
+      charts: props.registrationEveryHour
+    };
   }
 
   componentDidMount() {
-    this.props.dispatch( registrationEveryHour() );
+    this.props.dispatch(registrationEveryHour());
   }
 
   componentWillReceiveProps(nextProps) {
     this.setState({
-      charts                : nextProps.registrationEveryHour,
-    })
+      charts: nextProps.registrationEveryHour
+    });
   }
 
-  render(){
-    return(
+  render() {
+    return (
       <Line
-          data    = {this.state.charts}
-          options = {{maintainAspectRatio: false}}
-          height  = {500}
-          width   = {700}
+        data={this.state.charts}
+        options={{ maintainAspectRatio: false }}
+        height={500}
+        width={700}
       />
     );
   }

@@ -77,16 +77,19 @@ export default class PageColumn extends React.Component {
     searchFormObject[name] = val;
 
     //this.props.history.push(`/${this.props.match.params.type}/${this.props.match.params.page}/1`);
-    this.setState({
-      searchFormObject: searchFormObject
-    }, () => {
-      // this.props.history.push({
-      //   pathname:`/${this.props.match.params.type}/${this.props.match.params.page}/1`,
-      //   state:{
-      //     noRefresh:true,
-      //   },
-      // });
-    });
+    this.setState(
+      {
+        searchFormObject: searchFormObject
+      },
+      () => {
+        // this.props.history.push({
+        //   pathname:`/${this.props.match.params.type}/${this.props.match.params.page}/1`,
+        //   state:{
+        //     noRefresh:true,
+        //   },
+        // });
+      }
+    );
   }
 
   handleSubmit(e) {
@@ -100,13 +103,16 @@ export default class PageColumn extends React.Component {
       this.props.dispatch(admin_list(match, limit));
     } else {
       //this.props.history.push(`/${this.props.match.params.type}/${this.props.match.params.page}/1`);
-      this.props.dispatch(admin_pageColumn_search(match, limit, searchFormObject))
+      this.props
+        .dispatch(admin_pageColumn_search(match, limit, searchFormObject))
         .then(() => {
           this.props.history.push({
-            pathname:`/${this.props.match.params.type}/${this.props.match.params.page}/1`,
-            state:{
-              noRefresh:true,
-            },
+            pathname: `/${this.props.match.params.type}/${
+              this.props.match.params.page
+            }/1`,
+            state: {
+              noRefresh: true
+            }
           });
         });
     }

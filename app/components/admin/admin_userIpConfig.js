@@ -9,7 +9,7 @@ import tableHeader from "../../json/tableHeader.json";
 
 //Components
 import Table from "../module/table";
-import ToolDeductionRule from "../tool/admin/deductionRule";
+import Tool from "../tool/admin/userIpConfig";
 import NumberPage from "../module/numberPage";
 
 //Actions
@@ -18,26 +18,25 @@ import { admin_list } from "../../actions/admin/list";
 @connect((state, props) => {
   return {
     navData: state.nav.navData,
-    tableContentObject: state.admin.deductionRuleList,
     random: state.admin.random,
     total: state.admin.total,
     limit: state.admin.limit,
+    tableContentObject: state.admin.userIpConfigList,
     combinationUrl: state.admin.combinationUrl,
     matchPage: state.admin.matchPage
   };
 })
-export default class DeductionRule extends React.Component {
+export default class UserIpConfig extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       match: props.match,
       navData: props.navData,
       total: props.total,
       limit: props.limit,
-      tableHeader: tableHeader["deductionRule"],
+      tableHeader: tableHeader["userIpConfig"],
       tableContentObject: props.tableContentObject,
-      fixedKey: ["name"],
+      fixedKey: ["columnName"],
       nowPageNumber: props.match.params.nowPageNumber || 1
     };
   }
@@ -47,24 +46,6 @@ export default class DeductionRule extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (
-      nextProps.tableContentObject !== this.state.tableContentObject &&
-      nextProps.tableContentObject &&
-      nextProps.tableContentObject.length > 0
-    ) {
-      nextProps.tableContentObject.map(val => {
-        Object.keys(val).map(function(key, index) {
-          if (key && key === "guarantee") {
-            if (!val.fieldToBeOperate.match(/Count/)) {
-              val[key] /= 100;
-              val[key] = `${val[key]}元`;
-            } else {
-              val[key] = `${val[key]}个`;
-            }
-          }
-        });
-      });
-    }
     this.setState({
       match: nextProps.match,
       navData: nextProps.navData,
@@ -102,8 +83,8 @@ export default class DeductionRule extends React.Component {
   render() {
     return (
       <div className="main-block" data-nocolumns="true">
-        <Route component={ToolDeductionRule} limit={this.state.limit} />
-        {/* <ToolDeductionRule match={this.state.match} limit={this.state.limit}/> */}
+        <Route component={Tool} />
+        {/* <Tool match={this.state.match} history={this.props.history}/> */}
         <Table
           columns={this.state.tableHeader}
           dataSource={this.state.tableContentObject}

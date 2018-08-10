@@ -1,24 +1,21 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { DatePicker } from 'antd';
-import moment from 'moment';
+import { DatePicker } from "antd";
+import moment from "moment";
 
 //Components
 import CheckBox from "../input/checkBox";
 
 //Actions
-import { setup }          from "../../actions/setup";
+import { setup } from "../../actions/setup";
 import { allChannelList } from "../../actions/charts";
-import { admin_add }      from "../../actions/admin/list";
+import { admin_add } from "../../actions/admin/list";
 
 //javascripts
-import {
-  changeMs,
-  changeDateNoTime
-} from "../../public/javascripts/date";
+import { changeMs, changeDateNoTime } from "../../public/javascripts/date";
 
 const { RangePicker } = DatePicker;
-const dateFormat = 'YYYY/MM/DD HH:mm:ss';
+const dateFormat = "YYYY/MM/DD HH:mm:ss";
 
 @connect((state, props) => {
   return {
@@ -61,28 +58,28 @@ export default class RuleAdd extends React.Component {
         endTimestamp: "" //Date 結束時間戳
       },
       checkBoxSetup: {
-        wantUseApi            : "searchChannel", //想使用的 Api
-        useApiUrl             : setup().api['makeUp']['searchChannel'],
-        multiple              : false, //複選 true:開啟 false:關閉
-        showSearchBox         : true, //搜尋輸入框 true:顯示 false:隱藏
-        inputName             : "channelName", //搜尋輸入框  inputName
-        selectedData          : [] //初始值 { checkBoxId: [], checkBoxName:[] }
+        wantUseApi: "searchChannel", //想使用的 Api
+        useApiUrl: setup().api["makeUp"]["searchChannel"],
+        multiple: false, //複選 true:開啟 false:關閉
+        showSearchBox: true, //搜尋輸入框 true:顯示 false:隱藏
+        inputName: "channelName", //搜尋輸入框  inputName
+        selectedData: [] //初始值 { checkBoxId: [], checkBoxName:[] }
       },
       searchFormObject: {
-        channelIds      : [],
-        channelNames    : []
+        channelIds: [],
+        channelNames: []
       },
       userCheckBoxSetup: {
-        wantUseApi            : "searchUser", //想使用的 Api
-        useApiUrl             : setup().api['makeUp']['searchUser'],
-        multiple              : false, //複選 true:開啟 false:關閉
-        showSearchBox         : true, //搜尋輸入框 true:顯示 false:隱藏
-        inputName             : "userName", //搜尋輸入框  inputName
-        selectedData          : [] //初始值 { checkBoxId: [], checkBoxName:[] }
+        wantUseApi: "searchUser", //想使用的 Api
+        useApiUrl: setup().api["makeUp"]["searchUser"],
+        multiple: false, //複選 true:開啟 false:關閉
+        showSearchBox: true, //搜尋輸入框 true:顯示 false:隱藏
+        inputName: "userName", //搜尋輸入框  inputName
+        selectedData: [] //初始值 { checkBoxId: [], checkBoxName:[] }
       },
       userSearchFormObject: {
-        userlIds       : [],
-        userNames      : []
+        userlIds: [],
+        userNames: []
       }
     };
   }
@@ -133,11 +130,11 @@ export default class RuleAdd extends React.Component {
     let name = e.target.name;
     let val = e.target.value;
     let isAmount = this.state.isAmount;
-    
+
     formObject[name] = val;
 
-    if(name == 'fieldToBeOperate'){
-      isAmount = !(val == 'newUserBindCount' || val == 'userBindCount');
+    if (name == "fieldToBeOperate") {
+      isAmount = !(val == "newUserBindCount" || val == "userBindCount");
     }
 
     this.setState({
@@ -155,37 +152,38 @@ export default class RuleAdd extends React.Component {
     formObject["step"] = Number(this.state.formObject["step"]) / 100;
     formObject["upperLimit"] =
       Number(this.state.formObject["upperLimit"]) / 100;
-    if(this.state.isAmount){
-      formObject["guarantee"] = Number(this.state.formObject["guarantee"]) * 100;
+    if (this.state.isAmount) {
+      formObject["guarantee"] =
+        Number(this.state.formObject["guarantee"]) * 100;
     }
     formObject["channelId"] = formObject["channelId"].toString();
     formObject["userId"] = formObject["userId"].toString();
     this.props.dispatch(admin_add(match, limit, formObject));
   }
 
-  dateTimeOnChangeStart(value, dateString){
+  dateTimeOnChangeStart(value, dateString) {
     let formObject = this.state.formObject;
-    formObject['beginTimestamp'] = changeMs(dateString);
+    formObject["beginTimestamp"] = changeMs(dateString);
     this.setState({
       formObject
-    })
+    });
   }
 
-  dateTimeOnChangeEnd(value, dateString){
+  dateTimeOnChangeEnd(value, dateString) {
     let formObject = this.state.formObject;
-    formObject['endTimestamp'] = changeMs(dateString);
+    formObject["endTimestamp"] = changeMs(dateString);
     this.setState({
       formObject
-    })
+    });
   }
 
-  handleStartOpenChange(open){
+  handleStartOpenChange(open) {
     if (!open) {
       this.setState({ endOpen: true });
     }
   }
 
-  handleEndOpenChange(open){
+  handleEndOpenChange(open) {
     this.setState({ endOpen: open });
   }
 
@@ -214,10 +212,10 @@ export default class RuleAdd extends React.Component {
               <li className="label">用户帐号</li>
               <li>
                 <CheckBox
-                  searchFormObject  = {this.state.userSearchFormObject}
-                  checkBoxBackArray = {this.userCheckBoxBackArray.bind(this)}
-                  checkBoxSetup     = {this.state.userCheckBoxSetup}
-                  useApiUrl         = {this.state.userCheckBoxSetup['useApiUrl']}
+                  searchFormObject={this.state.userSearchFormObject}
+                  checkBoxBackArray={this.userCheckBoxBackArray.bind(this)}
+                  checkBoxSetup={this.state.userCheckBoxSetup}
+                  useApiUrl={this.state.userCheckBoxSetup["useApiUrl"]}
                 />
               </li>
             </ul>
@@ -259,11 +257,11 @@ export default class RuleAdd extends React.Component {
                     min="1"
                     required
                   />
-                  {
-                    this.state.isAmount ?
-                      <span className="unit">元</span>:
-                      <span className="unit">个</span>
-                  }
+                  {this.state.isAmount ? (
+                    <span className="unit">元</span>
+                  ) : (
+                    <span className="unit">个</span>
+                  )}
                 </div>
               </li>
             </ul>
@@ -374,10 +372,10 @@ export default class RuleAdd extends React.Component {
               <li className="label">渠道名称</li>
               <li>
                 <CheckBox
-                  searchFormObject  = {this.state.searchFormObject}
-                  checkBoxBackArray = {this.checkBoxBackArray.bind(this)}
-                  checkBoxSetup     = {this.state.checkBoxSetup}
-                  useApiUrl         = {this.state.checkBoxSetup['useApiUrl']}
+                  searchFormObject={this.state.searchFormObject}
+                  checkBoxBackArray={this.checkBoxBackArray.bind(this)}
+                  checkBoxSetup={this.state.checkBoxSetup}
+                  useApiUrl={this.state.checkBoxSetup["useApiUrl"]}
                 />
               </li>
             </ul>

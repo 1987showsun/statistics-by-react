@@ -1,4 +1,4 @@
-import axios     from "axios";
+import axios from "axios";
 import { setup } from "./setup";
 
 export function signIn(formObject) {
@@ -20,9 +20,9 @@ export function signIn(formObject) {
       sessionStorage.setItem("user", JSON.stringify(user));
 
       dispatch({
-        type : "LOGIN_STATUS",
-        msg  : msg,
-        code : code
+        type: "LOGIN_STATUS",
+        msg: msg,
+        code: code
       });
     });
   };
@@ -33,9 +33,9 @@ export function logout() {
     sessionStorage.clear();
     localStorage.clear();
     dispatch({
-      type : "LOGIN_STATUS",
-      msg  : "登出成功",
-      code : -1
+      type: "LOGIN_STATUS",
+      msg: "登出成功",
+      code: -1
     });
   };
 }
@@ -45,9 +45,9 @@ export function getMemberInfo(formObject) {
     let member = setup().member;
     let auth = setup().auth;
     dispatch({
-      type   : "LOGIN_MEMBER",
-      member : member,
-      auth   : auth
+      type: "LOGIN_MEMBER",
+      member: member,
+      auth: auth
     });
   };
 }

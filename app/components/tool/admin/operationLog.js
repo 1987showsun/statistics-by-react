@@ -82,15 +82,16 @@ export default class OperationLog extends React.Component {
     let match = this.state.match;
     let limit = this.state.limit;
     this.props.searchFormVal(searchFormObject);
-    this.props.dispatch(admin_list(match, limit, searchFormObject))
-      .then(()=>{
-        this.props.history.push({
-          pathname:`/${this.props.match.params.type}/${this.props.match.params.page}/1`,
-          state:{
-            noRefresh:true,
-          },
-        });
+    this.props.dispatch(admin_list(match, limit, searchFormObject)).then(() => {
+      this.props.history.push({
+        pathname: `/${this.props.match.params.type}/${
+          this.props.match.params.page
+        }/1`,
+        state: {
+          noRefresh: true
+        }
       });
+    });
   }
 
   selectRenderInputView() {

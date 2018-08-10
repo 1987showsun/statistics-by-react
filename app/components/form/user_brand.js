@@ -2,12 +2,12 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 //Components
-import CheckBox              from "../input/checkBox";
+import CheckBox from "../input/checkBox";
 
 //Actions
-import { setup }             from "../../actions/setup";
+import { setup } from "../../actions/setup";
 import { update_user_brand } from "../../actions/admin/update";
-import { getAllBrand }       from "../../actions/getAllData";
+import { getAllBrand } from "../../actions/getAllData";
 
 @connect((state, props) => {
   return {
@@ -23,24 +23,24 @@ export default class UserToBrand extends React.Component {
       update_status: 0,
       msg: props.popupMsg,
       checkBoxSetup: {
-        wantUseApi            : "allBrand", //想使用的 Api
-        useApiUrl             : setup().api['makeUp']['allBrand'],
-        multiple              : true,       //複選 true:開啟 false:關閉
-        showSearchBox         : false,      //搜尋輸入框 true:顯示 false:隱藏
-        inputName             : "",         //搜尋輸入框  inputName
-        selectedData   : props.seleEditData["brands"].map((item, i) => {
+        wantUseApi: "allBrand", //想使用的 Api
+        useApiUrl: setup().api["makeUp"]["allBrand"],
+        multiple: true, //複選 true:開啟 false:關閉
+        showSearchBox: false, //搜尋輸入框 true:顯示 false:隱藏
+        inputName: "", //搜尋輸入框  inputName
+        selectedData: props.seleEditData["brands"].map((item, i) => {
           //初始值 { checkBoxId: [], checkBoxName:[] }
           return {
-            checkBoxId   : item.id,
-            checkBoxName : item.brandName
+            checkBoxId: item.id,
+            checkBoxName: item.brandName
           };
         })
       },
 
       formObject: {
-        userId     : props.seleEditData["id"],
-        brandIds   : [],
-        brandNames : []
+        userId: props.seleEditData["id"],
+        brandIds: [],
+        brandNames: []
       }
     };
   }
@@ -106,10 +106,10 @@ export default class UserToBrand extends React.Component {
               <li className="label">请选择品牌</li>
               <li>
                 <CheckBox
-                  checkBoxSetup     = {this.state.checkBoxSetup}
-                  searchFormObject  = {this.state.formObject}
-                  checkBoxBackArray = {this.checkBoxBackArray.bind(this)}
-                  useApiUrl         = {this.state.checkBoxSetup['useApiUrl']}
+                  checkBoxSetup={this.state.checkBoxSetup}
+                  searchFormObject={this.state.formObject}
+                  checkBoxBackArray={this.checkBoxBackArray.bind(this)}
+                  useApiUrl={this.state.checkBoxSetup["useApiUrl"]}
                 />
               </li>
             </ul>

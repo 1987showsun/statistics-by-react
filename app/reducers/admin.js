@@ -27,7 +27,9 @@ export default function admin(
     combinationUrl: {
       searchType: "",
       searchVal: ""
-    }
+    },
+    userIpTypeList: [],
+    userIpConfigList: []
   },
   action
 ) {
@@ -187,6 +189,18 @@ export default function admin(
         ...state,
         combinationUrl: action.combinationUrl,
         matchPage: action.matchPage
+      };
+      break;
+    case "ADMIN_USER_IP_CONFIG_LIST":
+      state = {
+        ...state,
+        code: action.code,
+        msg: action.msg,
+        limit: action.limit,
+        total: action.total,
+        currentPage: action.currentPage,
+        userIpTypeList: action.typeList,
+        userIpConfigList: action.data
       };
       break;
   }

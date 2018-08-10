@@ -50,16 +50,16 @@ export default class DeductionRule extends React.Component {
     };
   }
 
-  handleChange(e,main) {
+  handleChange(e, main) {
     let searchFormObject = this.state.searchFormObject;
     let name = e.target.name;
     let val = e.target.value;
 
     searchFormObject[name] = val;
-    if(main) searchFormObject.searchVal = '';
+    if (main) searchFormObject.searchVal = "";
 
     this.setState({
-      searchFormObject,
+      searchFormObject
     });
   }
 
@@ -168,7 +168,7 @@ export default class DeductionRule extends React.Component {
               <div className="input-box" data-type="select">
                 <select
                   name="searchType"
-                  onChange={ e => this.handleChange(e,true)}
+                  onChange={e => this.handleChange(e, true)}
                 >
                   <option value="">请选择搜寻条件</option>
                   <option value="userId">用户ID</option>

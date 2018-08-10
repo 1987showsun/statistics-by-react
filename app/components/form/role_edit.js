@@ -8,17 +8,16 @@ import { update } from "../../actions/admin/update";
 
 @connect((state, props) => {
   return {
-    popupMsg     : state.popup.msg,
+    popupMsg: state.popup.msg,
     seleEditData: state.popup.data
   };
 })
-
 export default class MemberEdit extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       match: props.match,
-      msg  : props.popupMsg,
+      msg: props.popupMsg,
       formObject: {
         id: props.seleEditData["id"],
         roleName: props.seleEditData["roleName"],
@@ -29,8 +28,8 @@ export default class MemberEdit extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     this.setState({
-      msg            : nextProps.popupMsg
-    })
+      msg: nextProps.popupMsg
+    });
   }
 
   handleChange(e) {
